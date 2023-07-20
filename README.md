@@ -1,8 +1,8 @@
 # Set4wsl
 Configure WSL Easily
 
-## Install WSL
-Before you start it, RUN ADMINISTRATOR Terminal(CMD/POWERSHELL)
+## I. Install WSL
+Before you start it, RUN  Terminal(CMD/POWERSHELL) as ADMINISTRATOR.
 ### 1. Install Linux
 If Windows 11 or Windows 10 2004 and higher, follow this.
 #### 1) Update WSL
@@ -29,20 +29,24 @@ Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
 #### 2) Set WSL
 ##### 2-1) Set on WSL
 ###### Option A
+Download Set4wsl and run the PowerShell script.
 ```powershell
-.\enable-wsl.ps1
+.\enable_wsl.ps1
 ```
 ###### Option B
+If can’t donwload, try manually.
 ```powershell
 dism /online /enable-feature /featurename:VirtualMachinePlatform /all /norestar
 dism /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestar
 ```
 ##### 2-2) Setup WSL2
 ###### Option A
+Download Set4wsl and run the PowerShell script.
 ```powershell
-.\setup-wsl.ps1
+.\setup_wsl.ps1
 ```
 ###### Option B
+If can’t donwload, try manually.
 ```powershell
 curl -L -o \wsl_update_x64.msi https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi
 .\wsl_update_x64.msi /quiet
@@ -51,17 +55,20 @@ wsl --set-default-version 2
 wsl --update
 ```
 
-## Configure WSL
+## II. Configure WSL
 Run this script on Windows:
 ```powershell
-.\config-wsl.ps1
+.\config_wsl.ps1
 ```
 
-## Use WSL GUI
-Run this script on Linux:
+## III. Use WSL GUI
+This all command use on Linux.
+### 1. Update Linux
+Update and upgrade Linux.
 ```shell
 sudo apt update && sudo apt -y upgrade
 ```
+### 2. WSLg
 Then install gui application.
 ```shell
 sudo apt install -y [AppName]
@@ -72,31 +79,35 @@ Run GUI application.
 [AppName] &
 # e.g. epiphany-browser &
 ```
-### Win-Kex
+### 3. Win-Kex
 If you use Kali Linux, try Win-Kex with seamless mode.
 ```shell
 sudo apt install -y kali-win-kex
 ```
-#### 1. Window Mode
-##### 1) Start
+#### 1) Window Mode
+###### Start
+Use Win-Kex Window Mode.
 ```shell
 kex --win
 ```
-##### 2) Stop
+###### Stop
+Stop Win-Kex Window Mode.
 ```shell
 kex --win --stop
 ```
-#### 2. Seamless Mode
-##### 1) Start
+#### 2) Seamless Mode
+###### Start
+Use Win-Kex Seamless Mode.
 ```shell
 kex --sl
 ```
-##### 2) Stop
+###### Stop
+Stop Win-Kex Seamless Mode.
 ```shell
 kex --sl --stop
 ```
-#### 3. Useful Command
-If need Kali sound:
+#### 3) Useful Command
+Turn on Kali Linux sound.
 ```shel
 kex --win --sound
 ```
