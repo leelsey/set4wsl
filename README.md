@@ -18,7 +18,7 @@ Install Alterantive(Debian/Kali) via WSL.
 ```powershell
 wsl --install debian
 # or
-wsl --install kali
+wsl --install kali-linux
 ```
 ### 2. Install WSL2
 If not Windows 11 or Windows 10 2004 and higher, follow this.
@@ -43,7 +43,7 @@ dism /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all
 ###### Option A
 Download Set4wsl and run the PowerShell script.
 ```powershell
-.\setup_wsl.ps1
+.\set_wsl.ps1
 ```
 ###### Option B
 If can’t donwload, try manually.
@@ -56,7 +56,7 @@ wsl --update
 ```
 
 ## II. Configure WSL
-Run this script on Windows:
+Run this script on Windows for configure WSL. Before run this, you need minimum 3GB storage space.
 ```powershell
 .\config_wsl.ps1
 ```
