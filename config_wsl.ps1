@@ -34,16 +34,16 @@ function Configure-WSL($confOption, $cpuCore, $totalRam) {
 }
 
 function main {
-    Write-Host "`nSet4wsl`n - Configuration WSL"
+    Write-Host "`nSet4wsl - Auto WSL Configure"
 
     $cpuCore, $totalRam = Check-SysInfo
-    Write-Host "System Information`n - CPU: $cpuCore Core`n - RAM: $totalRam GB`n"
+    Write-Host "`nSystem Information`n - CPU: $cpuCore Core`n - RAM: $totalRam GB`n"
 
-    Write-Host "Set4wsl`n  1) Full Power`n  2) High Performance`n  3) Balance Control`n  4) Limited Resource"
+    Write-Host "Configuration Option`n  1) Full Power`n  2) High Performance`n  3) Balance Control`n  4) Limited Resource"
     $confOption = Read-Host "Choose option"
     Configure-WSL $confOption $cpuCore $totalRam
 
-    Write-Host "Finish!`nIf you running WSL, please restart WSL: wsl --shutdown"
+    Write-Host "`nFinish! If you're running WSL, please restart WSL: wsl --shutdown"
 }
 
 main
