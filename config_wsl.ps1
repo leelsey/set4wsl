@@ -9,7 +9,7 @@ function  Check-SysInfo {
 }
 
 function GenerateFile($configPath, $configCPU, $configRam) {
-    $configContents = "[wsl2]`nmemory=$totalRam`nprocessors=$configCPU`GB`nswap=$configRam`GB"
+    $configContents = "[wsl2]`nmemory=$totalRam`GB`nprocessors=$configCPU`nswap=$configRam`GB"
     $configContents | Out-File $configPath -Encoding utf8
 }
 
