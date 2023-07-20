@@ -8,28 +8,28 @@ Before you start it, RUN  Terminal(CMD/POWERSHELL) as ADMINISTRATOR.
 Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
 ```
 ### 2. Setup WSL
-Setup WSL on Windows.
+Setup WSL on Windows. Run this and restart Windows.
+```powershell
 ###### Option A
 Download Set4wsl and run the PowerShell script.
 ```powershell
 .\enable_wsl.ps1
 ```
 ###### Option B
-If can’t donwload, try manually.
+If can't donwload, try manually.
 ```powershell
 dism /online /enable-feature /featurename:VirtualMachinePlatform /all /norestar
 dism /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestar
 ```
-### 4. Use WSL2
-If not Windows 11 or Windows 10 2004 and higher, follow this.
-##### 2-2) Setup WSL2
+### 3. Use WSL2
+If not Windows 11 or Windows 10 2004 and higher, follow this and setup WSL2.
 ###### Option A
 Download Set4wsl and run the PowerShell script.
 ```powershell
 .\set_wsl.ps1
 ```
 ###### Option B
-If can’t donwload, try manually.
+If can't donwload, try manually.
 ```powershell
 curl -L -o \wsl_update_x64.msi https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi
 .\wsl_update_x64.msi /quiet
@@ -38,7 +38,6 @@ wsl --set-default-version 2
 ```
 
 ## II. Install Linux
-If Windows 11 or Windows 10 2004 and higher, follow this.
 ### 1. Update WSL
 Update WSL on Windows.
 ```powershell
