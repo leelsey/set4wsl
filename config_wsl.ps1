@@ -24,9 +24,9 @@ function Configure-WSL($confOption, $cpuCore, $totalRam) {
 
     switch($confOption) {
         1 { GenerateFile $configFile $cpuCore $totalRam $totalRam }
-        2 { GenerateFile $configFile $cpuCore $([Math]::Round$($totalRam * 0.8)) }
-        3 { GenerateFile $configFile $([Math]::Round($cpuCore * 0.8)) $([Math]::Round$($totalRam * 0.5)) }
-        4 { GenerateFile $configFile 1 $([Math]::Floor($cpuCore * 0.5)) $([Math]::Round$($totalRam * 0.3)) }
+        2 { GenerateFile $configFile $cpuCore $([Math]::Round($totalRam * 0.8)) }
+        3 { GenerateFile $configFile $([Math]::Round($cpuCore * 0.8)) $([Math]::Round($totalRam * 0.5)) }
+        4 { GenerateFile $configFile 1 $([Math]::Floor($cpuCore * 0.5)) $([Math]::Round($totalRam * 0.3)) }
         default { Write-Host "Invalid option. Please choose a valid option (between 1-4)." }
     }
 
@@ -34,7 +34,8 @@ function Configure-WSL($confOption, $cpuCore, $totalRam) {
 }
 
 function main {
-    Write-Host "`nSet4wsl - Auto WSL Configure"
+    Write-Host "`n   ____    __  ____            __`n  / __/__ / /_/ / /_    _____ / /`n _\ \/ -_) __/_  _/ |/|/ (_-</ /`n/___/\__/\__/ /_/ |__,__/___/_/"
+    Write-Host "Set4wsl - Auto WSL Configure"
 
     $cpuCore, $totalRam = Check-SysInfo
     Write-Host "`nSystem Information`n - CPU: $cpuCore Core`n - RAM: $totalRam GB`n"
