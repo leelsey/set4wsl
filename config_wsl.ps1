@@ -9,7 +9,7 @@ function  Check-SysInfo {
 }
 
 function GenerateFile($configPath, $configCPU, $configRam) {
-    $configContents = "[wsl2]`nmemory=$totalRam`GB`nprocessors=$configCPU`nswap=$configRam`GB"
+    $configContents = "[wsl2]`nmemory=$configRam`GB`nprocessors=$configCPU`nswap=$configRam`GB"
     $configContents | Out-File $configPath -Encoding utf8
 }
 
@@ -25,8 +25,8 @@ function Configure-WSL($confOption, $cpuCore, $totalRam) {
     switch($confOption) {
         1 { GenerateFile $configFile $cpuCore $totalRam $totalRam }
         2 { GenerateFile $configFile $cpuCore $($totalRam * 0.8) }
-        3 { GenerateFile $configFile $([Math]::Round($cpuCore * 0.5)) $($totalRam * 0.5) }
-        4 { GenerateFile $configFile 1 $([Math]::Floor($cpuCore * 0.3)) $($totalRam * 0.3) }
+        3 { GenerateFile $configFile $([Math]::Round($cpuCore * 0.8)) $($totalRam * 0.5) }
+        4 { GenerateFile $configFile 1 $([Math]::Floor($cpuCore * 0.5)) $($totalRam * 0.3) }
         default { Write-Host "Invalid option. Please choose a valid option (between 1-4)." }
     }
 
