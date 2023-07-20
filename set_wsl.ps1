@@ -1,3 +1,4 @@
+Write-Host "`n   ____    __  ____            __`n  / __/__ / /_/ / /_    _____ / /`n _\ \/ -_) __/_  _/ |/|/ (_-</ /`n/___/\__/\__/ /_/ |__,__/___/_/"
 Write-Host "`nSet4wsl - Setup WSL2`n"
 
 curl -L -o \wsl_update_x64.msi https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi
