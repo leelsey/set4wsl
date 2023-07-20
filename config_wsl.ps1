@@ -9,7 +9,7 @@ function  Check-SysInfo {
 }
 
 function GenerateFile($configPath, $configCPU, $configRam) {
-    $configContents = "`n[wsl2]`nmemory=$totalRam`nprocessors=$configCPU\GB`nswap=$configRam\GB"
+    $configContents = "[wsl2]`nmemory=$totalRam`nprocessors=$configCPU`GB`nswap=$configRam`GB"
     $configContents | Out-File $configPath -Encoding utf8
 }
 
@@ -18,6 +18,7 @@ function Configure-WSL($confOption, $cpuCore, $totalRam) {
     $configFileBck = "$env:USERPROFILE\.wslconfig.bck"
     
     if(Test-Path $configFile) {
+        if(Test-Path $configFileBck) { Remove-Item -Path $configFileBck -Force }
         Move-Item -Path $configFile -Destination $configFileBck -Force
     }
 
@@ -38,8 +39,8 @@ function main {
     $cpuCore, $totalRam = Check-SysInfo
     Write-Host "System Information`n - CPU: $cpuCore Core`n - RAM: $totalRam GB`n"
 
-    Write-Host "Set4wsl`n  1) Everything  Share`n  2) High Performance`n  3) Balance Control`n  4) Limited Resource"
-    $confOption = Read-Host "Choose option:  "
+    Write-Host "Set4wsl`n  1) Full Power`n  2) High Performance`n  3) Balance Control`n  4) Limited Resource"
+    $confOption = Read-Host "Choose option"
     Configure-WSL $confOption $cpuCore $totalRam
 
     Write-Host "Finish!`nIf you running WSL, please restart WSL: wsl --shutdown"
