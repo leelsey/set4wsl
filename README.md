@@ -3,31 +3,12 @@ Configure WSL Easily
 
 ## I. Install WSL
 Before you start it, RUN  Terminal(CMD/POWERSHELL) as ADMINISTRATOR.
-### 1. Install Linux
-If Windows 11 or Windows 10 2004 and higher, follow this.
-#### 1) Update WSL
-```powershell
-wsl --update
-```
-#### 2) Download Linux
-Install Default(Ubuntu) via WSL.
-```powershell
-wsl --install
-```
-Install Alterantive(Debian/Kali) via WSL.
-```powershell
-wsl --install debian
-# or
-wsl --install kali-linux
-```
-### 2. Install WSL2
-If not Windows 11 or Windows 10 2004 and higher, follow this.
-#### 1) Powershell Security Bypass
+### 1. Powershell Security Bypass
 ```powershell
 Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
 ```
-#### 2) Set WSL
-##### 2-1) Set on WSL
+### 2. Setup WSL
+Setup WSL on Windows.
 ###### Option A
 Download Set4wsl and run the PowerShell script.
 ```powershell
@@ -39,6 +20,8 @@ If can’t donwload, try manually.
 dism /online /enable-feature /featurename:VirtualMachinePlatform /all /norestar
 dism /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestar
 ```
+### 4. Use WSL2
+If not Windows 11 or Windows 10 2004 and higher, follow this.
 ##### 2-2) Setup WSL2
 ###### Option A
 Download Set4wsl and run the PowerShell script.
@@ -52,16 +35,35 @@ curl -L -o \wsl_update_x64.msi https://wslstorestorage.blob.core.windows.net/wsl
 .\wsl_update_x64.msi /quiet
 Remove-Item .\wsl_update_x64.msi
 wsl --set-default-version 2
-wsl --update
 ```
 
-## II. Configure WSL
+## II. Install Linux
+If Windows 11 or Windows 10 2004 and higher, follow this.
+### 1. Update WSL
+Update WSL on Windows.
+```powershell
+wsl --update
+```
+### 2. Download Linux
+Install Default(Ubuntu) via WSL.
+```powershell
+wsl --install
+# or use this: wsl --install ubuntu 
+```
+Install Alterantive(Debian/Kali) via WSL.
+```powershell
+wsl --install debian
+# or
+wsl --install kali-linux
+```
+
+## III. Configure WSL
 Run this script on Windows for configure WSL. Before run this, you need minimum 3GB storage space.
 ```powershell
 .\config_wsl.ps1
 ```
 
-## III. Use WSL GUI
+## IV. Use WSL GUI
 This all command use on Linux.
 ### 1. Update Linux
 Update and upgrade Linux.
@@ -111,6 +113,3 @@ Turn on Kali Linux sound.
 ```shel
 kex --win --sound
 ```
-
-
-
