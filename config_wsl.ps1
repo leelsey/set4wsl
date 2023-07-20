@@ -24,9 +24,9 @@ function Configure-WSL($confOption, $cpuCore, $totalRam) {
 
     switch($confOption) {
         1 { GenerateFile $configFile $cpuCore $totalRam $totalRam }
-        2 { GenerateFile $configFile $cpuCore $($totalRam * 0.8) }
-        3 { GenerateFile $configFile $([Math]::Round($cpuCore * 0.8)) $($totalRam * 0.5) }
-        4 { GenerateFile $configFile 1 $([Math]::Floor($cpuCore * 0.5)) $($totalRam * 0.3) }
+        2 { GenerateFile $configFile $cpuCore $([Math]::Round$($totalRam * 0.8)) }
+        3 { GenerateFile $configFile $([Math]::Round($cpuCore * 0.8)) $([Math]::Round$($totalRam * 0.5)) }
+        4 { GenerateFile $configFile 1 $([Math]::Floor($cpuCore * 0.5)) $([Math]::Round$($totalRam * 0.3)) }
         default { Write-Host "Invalid option. Please choose a valid option (between 1-4)." }
     }
 
