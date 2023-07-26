@@ -108,22 +108,26 @@ kex --sl --stop
 ```
 #### 3) Useful Command
 Turn on Kali Linux sound.
-```shel
+```shell
 kex --win --sound
 ```
 
 ## V. Work Environment
 ### 1. Kali Linux
-#### 1) Full Upgrade
-```shel
+Setup Kali Environment
+#### 1) Upgrade for Kali
+Update all packages
+```shell
 sudo apt update && sudo apt full-upgrade -y
 ```
 #### 2) Metapackages
 ##### Default Packages
-```shel
+Setup to install default Kali tools
+```shell
 sudo apt install -y kali-linux-default
 ```
 ##### Full Packages
-```shel
+Setup to install all Kali tools
+```shell
 sudo apt install -y kali-linux-everything
 ```
