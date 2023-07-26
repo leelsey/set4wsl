@@ -9,7 +9,6 @@ Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
 ```
 ### 2. Setup WSL
 Setup WSL on Windows. Run this and restart Windows.
-```powershell
 ###### Option A
 Download Set4wsl and run the PowerShell script.
 ```powershell
@@ -111,4 +110,20 @@ kex --sl --stop
 Turn on Kali Linux sound.
 ```shel
 kex --win --sound
+```
+
+## V. Work Environment
+### 1. Kali Linux
+#### 1) Full Upgrade
+```shel
+sudo apt update && sudo apt full-upgrade -y
+```
+#### 2) Metapackages
+##### Default Packages
+```shel
+sudo apt install -y kali-linux-default
+```
+##### Full Packages
+```shel
+sudo apt install -y kali-linux-everything
 ```
