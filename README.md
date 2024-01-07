@@ -1,6 +1,12 @@
 # Set4wsl
 Configure WSL Easily
 
+* [I. Install WSL](#i-install-wsl)
+* [II. Install Linux](#ii-install-linux)
+* [III. Configure WSL](#iii-configure-wsl)
+* [IV. Use WSL GUI](#iv-use-wsl-gui)
+* [V. Work Environmnet](#v-work-environment)
+
 ## I. Install WSL
 Before you start it, RUN  Terminal(CMD/POWERSHELL) as ADMINISTRATOR.
 ### 1. Powershell Security Bypass
