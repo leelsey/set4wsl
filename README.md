@@ -1,5 +1,5 @@
 # Set4wsl
-Configure WSL Easily
+Easily configure your WSL environment.
 
 * [I. Install WSL](#i-install-wsl)
 * [II. Install Linux](#ii-install-linux)
