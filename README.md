@@ -24,7 +24,7 @@ Download Set4wsl and run the PowerShell script.
 If can't donwload, try manually.
 ```powershell
 dism /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
-dism /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
+dism /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all
 ```
 ### 3. Use WSL2
 If not Windows 11 or Windows 10 2004 and higher, follow this and setup WSL2.

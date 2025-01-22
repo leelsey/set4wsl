@@ -2,6 +2,6 @@ Write-Host "`n   ____    __  ____            __`n  / __/__ / /_/ / /_    _____ /
 Write-Host "`nSet4wsl - Enable WSL`n"
 
 dism /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
-dism /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
+dism /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all
 
 Write-Host "`nDone! Please restart your computer to apply changes."
